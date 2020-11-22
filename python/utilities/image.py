@@ -20,7 +20,7 @@ def convert_image(input_path, output_path, o_ext=None):
     - Every image will be convert to RGB, 
       which mean the output image will not have alpha value.
     '''
-    supported_exts = ('png', 'jpeg', 'webp')
+    supported_exts = ('png', 'jpeg', 'webp', 'bmp')
     if not o_ext:
         _, ext = splitext(output_path)
         o_ext = ext[1:].lower().replace('jpg', 'jpeg')
