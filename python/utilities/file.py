@@ -23,3 +23,11 @@ def load_json(filepath, mode='r', encoding='utf-8'):
 def save_json(data, filepath, mode='w', encoding='utf-8'):
     with open(filepath, mode, encoding=encoding) as f:
         json.dump(data, f, indent=4)
+
+
+# remove file safely (atomic operation)
+# require python 3.8+
+from pathlib import Path
+my_file = Path('./text.txt')
+my_file.unlink(missing_ok=True)
+
