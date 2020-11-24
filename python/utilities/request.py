@@ -1,7 +1,7 @@
 '''
 Utility functions for working with requests
-
-Author: minhdq99hp@gmail.com
+Contributors: 
+    - minhdq99hp@gmail.com
 '''
 import requests
 from time import sleep

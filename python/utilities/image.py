@@ -1,7 +1,7 @@
 '''
 Utility functions for working with images.
-
-Author: minhdq99hp@gmail.com
+Contributors: 
+    - minhdq99hp@gmail.com
 '''
 from PIL import Image
 from os.path import splitext

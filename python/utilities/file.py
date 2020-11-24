@@ -1,6 +1,7 @@
 '''
 Utility function for working with files
-Author: minhdq99hp@gmail.com
+Contributors: 
+    - minhdq99hp@gmail.com
 '''
 import yaml
 import json
