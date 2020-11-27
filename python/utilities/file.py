@@ -25,9 +25,23 @@ def save_json(data, filepath, mode='w', encoding='utf-8'):
         json.dump(data, f, indent=4)
 
 
-# remove file safely (atomic operation)
-# require python 3.8+
-from pathlib import Path
-my_file = Path('./text.txt')
-my_file.unlink(missing_ok=True)
+if __name__ == '__main__':
+    # remove file safely (atomic operation)
+    # require python 3.8+
+    from pathlib import Path
+    my_file = Path('./text.txt')
+    my_file.unlink(missing_ok=True)
+
+
+    # create folder recursively
+    Path(des).mkdir(parents=True, exist_ok=True)
+
+    # clear folder not so safely
+    import os
+    import shutil
+    if os.path.isdir(folder_location):
+        shutil.rmtree(folder_location)
+
+    time.sleep(.5)  # to prevent error
+    os.makedirs(folder_location, 0o777)
 
