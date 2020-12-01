@@ -4,7 +4,7 @@ from pathlib import Path
 from ftplib import FTP, error_perm
 
 
-class FTPWarpper():
+class FTPWrapper():
     def __init__(self, host, user, password, base_dir):
         self._ftp = FTP(host, user, password)
 
