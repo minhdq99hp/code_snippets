@@ -24,6 +24,12 @@ def save_json(data, filepath, mode='w', encoding='utf-8'):
     with open(filepath, mode, encoding=encoding) as f:
         json.dump(data, f, indent=4)
 
+def remove_directory_contents(path):
+    for path in Path(path).glob("**/*"):
+        if path.is_file():
+            path.unlink()
+        elif path.is_dir():
+            rmtree(path)
 
 if __name__ == '__main__':
     # remove file safely (atomic operation)
