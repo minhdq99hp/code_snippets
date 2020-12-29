@@ -21,3 +21,41 @@ def remove_control_chars(s):
 
 def remove_duplicated_space(s):
     return re.sub(r'\s+', ' ', s)
+
+
+def split_lines(text, max_characters_per_lines=40, max_lines=2):
+    '''
+    Split long text into lines. Append '...' if the text is too long.
+    '''
+    words = text.split(' ')
+
+    start = 0
+    end = 0
+    count_chars = 0
+    count_lines = 0
+    max_lines = max_lines
+
+    lines = []
+    for w in words:
+        len_w = len(w)
+        if count_chars + len_w <= max_characters_per_lines:
+            count_chars += len_w + 1
+        else:
+            # create a line
+            if count_lines < max_lines:
+                end = start + count_chars
+                lines.append(text[start:end])
+
+                start = end
+                count_chars = 0
+                count_lines += 1
+            else:
+                # too many lines, must skip the overflow
+                if len(lines) > 0:
+                    lines[-1] += '...'
+                break
+    
+    if count_chars > 0 and count_lines < max_lines:
+        lines.append(text[start:])
+    
+    return lines

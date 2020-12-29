@@ -40,11 +40,16 @@ if __name__ == '__main__':
 
 
     # create folder recursively
+    des = ""
     Path(des).mkdir(parents=True, exist_ok=True)
 
     # clear folder not so safely
     import os
     import shutil
+    import time
+
+    folder_location = ""
+
     if os.path.isdir(folder_location):
         shutil.rmtree(folder_location)
 
