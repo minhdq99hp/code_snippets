@@ -16,6 +16,7 @@ control_chars = ''.join(map(chr, itertools.chain(range(0x00,0x20), range(0x7f,0x
 control_char_re = re.compile('[%s]' % re.escape(control_chars))
 
 def remove_control_chars(s):
+    """Remove control characters (non-printable characters) in string"""
     return control_char_re.sub('', s)
 
 

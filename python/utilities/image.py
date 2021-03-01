@@ -14,16 +14,22 @@ class UnsupportedExtension(Exception):
     pass
 
 def convert_image(input_path, output_path, o_ext=None):
-    '''
-    Use PIL.Image to convert image format.
+    """Use PIL.Image to convert image format.
     The output extension will be determined from output_path. 
     You can also specify it by using o_ext.
 
     Supported extensions: png, jpeg, webp
-    Warning: 
-    - Every image will be convert to RGB, 
-      which mean the output image will not have alpha value.
-    '''
+    
+    Note: Every image will be convert to RGB, which mean the output image will not have alpha value.
+
+    Args:
+        input_path (str): [description]
+        output_path (str): [description]
+        o_ext (str, optional): output extension, If you don't specific it, the return image will be JPG by default. Defaults to None.
+
+    Raises:
+        UnsupportedExtension: [description]
+    """    
     supported_exts = ('png', 'jpeg', 'webp', 'bmp')
     if not o_ext:
         _, ext = splitext(output_path)
