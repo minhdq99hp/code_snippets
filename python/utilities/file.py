@@ -56,3 +56,8 @@ if __name__ == '__main__':
     time.sleep(.5)  # to prevent error
     os.makedirs(folder_location, 0o777)
 
+    # check if object type is list or tuple (actually check if object type is sequence)
+    # require python 3.7+
+    import collections.abc
+    a_list = []
+    isinstance(a_list, collections.abc.Sequence)
