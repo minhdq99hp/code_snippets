@@ -60,3 +60,11 @@ def split_lines(text, max_characters_per_lines=40, max_lines=2):
         lines.append(text[start:])
     
     return lines
+
+
+def is_youtube_video_url(url):
+    pattern = r'http(?:s?):\/\/(?:www\.)?youtu(?:be\.com\/watch\?v=|\.be\/)([\w\-\_]*)(&(amp;)?‌​[\w\?‌​=]*)?'
+
+    found = re.search(pattern, url)
+
+    return True if found else False

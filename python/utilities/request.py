@@ -74,7 +74,8 @@ def download_file_from_url(url, expected_type, timeout=60, output_dir='', valid_
 
     '''
     result = {'status': 1}
-    filepath = os.path.join(output_dir, f'{uuid4()}')
+    filename = f'{uuid4()}'
+    filepath = os.path.join(output_dir, filename)
     extension = None
 
     # try to download the file
@@ -168,6 +169,7 @@ def download_file_from_url(url, expected_type, timeout=60, output_dir='', valid_
         raise UnexpectedFileFormat(f'Format {extension} is not expected.')
     
     result['path'] = filepath
+    result['filename'] = filename
     result['extension'] = extension
     result['status'] = 0
     return result
