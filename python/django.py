@@ -13,4 +13,8 @@ class HomeAPIView(APIView):
 
 
 
+import django
+
+if django.utils.timezone.is_naive(publish_date):
+    publish_date = django.utils.timezone.make_aware(publish_date)
 
