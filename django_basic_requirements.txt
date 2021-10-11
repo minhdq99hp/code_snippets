@@ -1,0 +1,6 @@
+Django
+djangorestframework
+celery
+django-cors-headers
+django-cleanup
+psycopg2

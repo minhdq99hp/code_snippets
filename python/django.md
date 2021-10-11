@@ -12,5 +12,7 @@ if not serializer.is_valid():
 serializer.is_valid(raise_exception=True)
 ```
 
+Cách đơn giản nhất để set id cho một object đấy là tạo fixture rồi chạy loaddata.
+
 
 
