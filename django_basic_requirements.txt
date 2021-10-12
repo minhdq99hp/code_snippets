@@ -1,6 +1,10 @@
+gunicorn
 Django
 djangorestframework
-celery
 django-cors-headers
-django-cleanup
 psycopg2
+celery
+redis
+
+django-cleanup
+djangorestframework-simplejwt
