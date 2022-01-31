@@ -24,6 +24,11 @@ def remove_duplicated_space(s):
     return re.sub(r'\s+', ' ', s)
 
 
+def normalize(s, form='NFC'):
+    s = s.replace('”', '"').replace('“', '"').replace("’", "'")
+    return unicodedata.normalize(form, s)
+
+
 def split_lines(text, max_characters_per_lines=40, max_lines=2):
     '''
     Split long text into lines. Append '...' if the text is too long.
